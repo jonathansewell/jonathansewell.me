@@ -14,8 +14,8 @@ a:not(:hover) {
 }
 
 .stack {
-  background: #222 url(cartographer.png);
-  color: #fff;
+  background: #fff;
+  color: #333;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
