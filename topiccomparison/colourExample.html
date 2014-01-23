@@ -82,6 +82,18 @@
                 label:'Apple MacBook Pro',
                 difference: -0.95,
                 volume: 39
+            }, {
+                label:'Greenish',
+                difference: -0.1,
+                volume: 24
+            }, {
+                label:'Greenish',
+                difference: 0,
+                volume: 24
+            }, {
+                label:'Greenish',
+                difference: 0.1,
+                volume: 24
             }];
 
 
@@ -89,11 +101,16 @@
                 takenBoxes = [];
 
             topics.forEach(function(topic) {
-                var $topic, xPosition, data, xScale;
+                var $topic, xPosition, data, xScale, colourScale;
+
+                colourScale = d3.scale.linear()
+                    .domain([-1, 1])
+                    .range(['cadetblue', 'crimson'])
+                    .interpolate(d3.interpolateHcl);
 
                 data = {
                     label: topic.label,
-                    colour: '#000',
+                    colour: colourScale(topic.difference),
                     fontSize: topic.volume
                 };
 

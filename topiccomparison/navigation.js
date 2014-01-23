@@ -11,7 +11,11 @@
 			'layoutWithScale.html',
 			'layoutWithScaleExample.html',
 			'intersections.html',
-			'intersectionsExample.html'
+			'intersectionsExample.html',
+			'colour.html',
+			'colourExample.html',
+			'font.html',
+			'fontExample.html'
 		];
 
 	nextSlideKeys.push(39, 40); //down and right cursor keys
