@@ -8,23 +8,23 @@
     <body>
         <h1>Avoiding Intersections</h1>
 
-    <pre>
+        <pre>
     noXIntersect = (box1.x1 > box2.x2 || box1.x2 < box2.x1);
     noYIntersect = (box1.y1 > box2.y2 || box1.y2 < box2.y1);
     return (noYIntersect && noXIntersect);
-    </pre>
+        </pre>
 
-    <p>
-        <ul>
-            <li>given an array of taken positions</li>
-            <li>for every topic element</li>
-            <li>get array of allowed positions</li>
-            <li>for every allowed position</li>
-            <li>check for intersection with taken positions</li>
-            <li>render or repeat</li>
-            <li>smallest first heuristic</li>
-        </ul>
-    </p>
+        <p>
+            <ul>
+                <li>given an array of taken positions</li>
+                <li>for every topic element</li>
+                <li>get array of allowed positions</li>
+                <li>for every allowed position</li>
+                <li>check for intersection with taken positions</li>
+                <li>render or repeat</li>
+                <li>smallest first heuristic</li>
+            </ul>
+        </p>
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

@@ -1,4 +1,6 @@
 (function() {
+	'use strict';
+
 	var nextSlideKeys = [],
 		previousSlideKeys = [],
 		pages = [
@@ -15,7 +17,12 @@
 			'colour.html',
 			'colourExample.html',
 			'font.html',
-			'fontExample.html'
+			'fontExample.html',
+			'drawingTheAxis.html',
+			'drawingTheAxisExample.html',
+			'sparklinesExample.html',
+			'conclusions.html',
+			'thanks.html'
 		];
 
 	nextSlideKeys.push(39, 40); //down and right cursor keys
