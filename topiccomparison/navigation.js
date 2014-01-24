@@ -25,11 +25,11 @@
 			'thanks.html'
 		];
 
-	nextSlideKeys.push(39, 40); //down and right cursor keys
+	//nextSlideKeys.push(39, 40); //down and right cursor keys
 	nextSlideKeys.push(32); //space bar
 	nextSlideKeys.push(13); //return
 
-	previousSlideKeys.push(37, 38); //up and left cursor keys
+	//previousSlideKeys.push(37, 38); //up and left cursor keys
 	previousSlideKeys.push(8); //backspace
 
 	document.onkeypress = function(e) {
