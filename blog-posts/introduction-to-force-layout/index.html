@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Introduction to d3.js force layout</title>
+        <meta name="description" content="">
+    </head>
+    <body>
+    <h1><a href="/">Jonathan Sewell</a></h1>
+
+<strong>Work In Progress....</strong><br/>
+
+    <script src="/vendor/d3/d3.v3.min.js"></script>
+
+    <svg style="border:1px solid #666"></svg>
+
+    <script>
+        var data = [],
+            width = 600,
+            height = 400;
+
+        function tick(){
+            circles.attr('cx', function(d) {
+                return d.x;
+            }).attr('cy', function(d) {
+                return d.y;
+            });
+        }
+
+        for (var i = 0; i < 100; i++) {
+            data.push({
+                radius: Math.random() * (10 - 1) + 1
+            });
+        };
+
+        var circles = d3.select('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .selectAll('circle')
+            .data(data)
+            .enter()
+                .append('circle')
+                .attr('r', function(d){
+                    return d.radius;
+                });
+
+        var force = d3.layout.force()
+            .nodes(data)
+            .size([width, height])
+            .on('tick', tick);
+
+        force.start();
+
+    </script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <script src="/src/analytics.js"></script>
+    </body>
+</html>
