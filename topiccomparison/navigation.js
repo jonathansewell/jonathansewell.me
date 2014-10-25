@@ -25,18 +25,10 @@
 			'thanks.html'
 		];
 
-	//nextSlideKeys.push(39, 40); //down and right cursor keys
 	nextSlideKeys.push(32); //space bar
 	nextSlideKeys.push(13); //return
 
-	//previousSlideKeys.push(37, 38); //up and left cursor keys
-	previousSlideKeys.push(8); //backspace
-
-	document.onkeypress = function(e) {
-		e = e || window.event;
-		navigate(e.keyCode);
-	};
-	document.onkeydown = function(e) {
+	document.onkeyup = function(e) {
 		e = e || window.event;
 		navigate(e.keyCode);
 	};
@@ -48,10 +40,6 @@
 			return pages[0];
 		}
 		return fileName;
-	}
-
-	function atFirstSlide() {
-		return getCurrentSlideIndex() === 0;
 	}
 
 	function atLastSlide() {
@@ -66,23 +54,17 @@
 		return pages[getCurrentSlideIndex() + 1];
 	}
 
-	function isNavigatingForward(keyCode){
+	function isNavigatingForward(keyCode) {
 		return nextSlideKeys.indexOf(keyCode) > -1;
 	}
 
-	function isNavigatingBackward(keyCode){
-		return previousSlideKeys.indexOf(keyCode) > -1;
-	}
-
 	function navigate(keyCode) {
-		console.log(keyCode);
+		console.log('navigating', keyCode);
 
-		if (!atLastSlide() && isNavigatingForward(keyCode)) {
-			window.location.href = getNextSlidePathname();
-		}
-
-		if (!atFirstSlide() && isNavigatingBackward(keyCode)) {
-			window.history.back();
+		if (isNavigatingForward(keyCode)) {
+			if (!atLastSlide()) {
+				window.location.href = getNextSlidePathname();
+			}
 		}
 	}
 })();

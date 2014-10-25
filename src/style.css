@@ -1,10 +1,4 @@
-h1{
-    font-size: 18px;
-}
-h2{
-    font-size: 16px;
-}
-article{
-    margin:24px auto;
-    width: 95%;
+body{
+    margin:24px;
+    /*width: 95%;*/
 }
