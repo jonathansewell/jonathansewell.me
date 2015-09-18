@@ -1,7 +1,8 @@
 var express = require('express');
-var http = require('http')
+var http = require('http');
 var path = require('path');
 var exphbs  = require('express-handlebars');
+var config = require('./lib/appConfig');
 
 var app = express();
 
@@ -31,6 +32,6 @@ app.use(function(req, res){
 	res.end('You\'re out biking');
 });
 
-app.listen(3000, function(){
-	console.log('http server listening at http://localhost:3000');
-})
+app.listen(3000, config.appHost, function(){
+	console.log('http server listening at http', config.appHost, config.appPort);
+});
