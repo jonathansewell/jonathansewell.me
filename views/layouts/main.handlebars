@@ -6,21 +6,39 @@
     <link rel="stylesheet" href="/src/style.css">
     <title>Jonathan Sewell</title>
 </head>
-<body class="background-colour">
-	<header class="colour1-background">
-        <h1>
-            <a href="/">Jonathan Sewell</a>
-        </h1>
-  	</header>
+<body>
+    <header>
+        <h1 class="title"><a href="/">Jonathan's Blog</a></h1>
+    </header>
 
-    <nav class="colour2-background">
-        <a href="//github.com/jonathansewell/">github.com/jonathansewell</a> - 
-        <a href="//twitter.com/jonathansewell">twitter.com/jonathansewell</a>
-    </nav>
-
-    <div class="contentwidth">
     {{{body}}}
-    </div>
+
+{{#enableComments}}
+    <section>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+            /*
+            var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                
+                s.src = '//jonathansewell.disqus.com/embed.js';
+                
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>        
+    </section>    
+{{/enableComments}}
  
  <script src="/src/analytics.js"></script>
 </body>
