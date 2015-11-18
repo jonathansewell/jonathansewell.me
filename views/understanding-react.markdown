@@ -1,0 +1,4 @@
+<quote>And since a component can’t directly change the props which are passed in from the outside world – user input won’t cause any change in the displayed value.</quote>
+http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack
+
+* so a text input built in React won't take user input - you can type away and nothjing happens, this is revealing
